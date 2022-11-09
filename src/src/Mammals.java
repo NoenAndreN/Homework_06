@@ -1,8 +1,18 @@
+import java.util.Comparator;
+
 abstract class Mammals implements Animals, Name {
     abstract int paws();
 
     public String voice() {
         return "Голос!";
+    }
+}
+
+
+class WolfComparator implements Comparator<Wolf> {
+
+    public int compare(Wolf h1, Wolf h2) {
+        return Integer.compare(h1.number, h2.number);
     }
 }
 

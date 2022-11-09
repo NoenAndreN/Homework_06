@@ -15,5 +15,9 @@ public class Main {
         Wolf wolf = new Wolf(0);
         System.out.println("About wolf:");
         wolf.info();
+
+
+
+
     }
 }
