@@ -31,6 +31,17 @@ class Wolf extends Mammals {
         System.out.println("Has " + this.paws() + " paws.");
         System.out.println("Voice: " + this.voice());
     }
+
+
+    public Wolf clone() {
+        try {
+            Wolf clone = (Wolf) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
 
 
