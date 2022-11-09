@@ -7,7 +7,13 @@ abstract class Mammals implements Animals, Name {
 }
 
 
-class Wolf extends Mammals {
+class Wolf extends Mammals implements Cloneable, Comparable <Wolf> {
+    public int number;
+
+    public Wolf (int number) {
+        this.number = number;
+    }
+
     public String nameOfAnimal() {
         return "Wolf";
     }
@@ -42,11 +48,19 @@ class Wolf extends Mammals {
             throw new AssertionError();
         }
     }
+
+    @Override
+    public int compareTo(Wolf o) {
+        return Integer.compare(this.number, o.number);
+    }
+
+    public String toString() {
+        return this.nameOfAnimal() + ", number: " + this.number;
+    }
 }
 
 
 class Fox extends Mammals {
-
 
     public String nameOfAnimal() {
         return "Fox";
@@ -57,11 +71,9 @@ class Fox extends Mammals {
         return "What does the fox say?";
     }
 
-
     public boolean canBite() {
         return true;
     }
-
 
     int paws() {
         return 4;
