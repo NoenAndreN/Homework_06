@@ -16,6 +16,28 @@ class WolfComparator implements Comparator<Wolf> {
     }
 }
 
+class LittleWolf extends Wolf {
+
+    public LittleWolf(int number) {
+        super(number);
+    }
+
+    @Override
+    public String nameOfAnimal() {
+        return "LittleWolf";
+    }
+
+    @Override
+    public String voice() {
+        return "Woofy!";
+    }
+
+    @Override
+    public boolean canBite() {
+        return false;
+    }
+}
+
 
 class Wolf extends Mammals implements Cloneable, Comparable <Wolf> {
     public int number;
